@@ -5,9 +5,36 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: darkslateblue;
+  /* background-color: #f8f9fa; */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+i{
+  cursor: pointer;
+}
+
+
+a.add{
+  --bs-body-color: #fff;
+
+  --bs-btn-border-color: #4d77bb;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #4d77bb;
+  --bs-btn-hover-border-color: #4d77bb;
+  --bs-btn-focus-shadow-rgb: 13,202,240;
+  --bs-btn-active-color: #4d77bb;
+  --bs-btn-active-border-color: #4d77bb;
+  --bs-btn-bg: #4d77bb;
+}
+a.cancel{
+  --bs-btn-border-color: #fff;
+}
+a.nav-link.active{
+  --bs-nav-pills-link-active-bg:#4d77bb
+}
+
