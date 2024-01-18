@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import userContext from "./userContext";
-require('dotenv').config()
+//require('dotenv').config()
 
 export default function UserState(props) {
   const host = process.env.REACT_APP_HOST;

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import NoteContext from "./noteContext";
-require('dotenv').config()
+//require('dotenv').config()
 
 const NoteState = (props)=>{
     const intNotes = [
