@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import NoteContext from "./noteContext";
+require('dotenv').config()
 
 const NoteState = (props)=>{
     const intNotes = [
@@ -8,7 +9,7 @@ const NoteState = (props)=>{
         }
     ]
     
-    const host = "http://localhost:5000/"
+    const host = process.env.REACT_APP_HOST;
    const [notes, setNotes] = useState(intNotes) 
    //get all notes
     const getNotes = async ()=>{

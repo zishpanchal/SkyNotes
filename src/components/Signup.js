@@ -1,14 +1,16 @@
 import React, {useState} from 'react'
 import signup from "../signup.png"
 import {useNavigate} from 'react-router-dom';
+require('dotenv').config()
 
 export default function Signup(props) {
     const [credentials, setCredentials] = useState({name: "",email: "", password: ""}) 
     let navigate = useNavigate()
+    const host = process.env.REACT_APP_HOST;
     const handleSubmit = async (e)=>{
         const {name, email, password} = credentials;
         e.preventDefault();
-        const response = await fetch("http://localhost:5000/api/auth/createuser", {
+        const response = await fetch(host+"api/auth/createuser", {
           method: 'POST',
           headers:{
             'Content-Type': 'application/json'
@@ -16,7 +18,7 @@ export default function Signup(props) {
           body: JSON.stringify({name, email, password})
         })
         const json = await response.json()
-        console.log(json)
+        // console.log(json)
         if(json.success){
           props.showAlert("success", "Successfully created your account")
           //save the auth token and redirect

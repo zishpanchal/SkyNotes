@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import userContext from "./userContext";
-
+require('dotenv').config()
 
 export default function UserState(props) {
-  const host = "http://localhost:5000/"
+  const host = process.env.REACT_APP_HOST;
    const [user, setUser] = useState({}) 
 
  //getuser
@@ -16,7 +16,7 @@ export default function UserState(props) {
         },
       });
       const json = await response.json(); // parses JSON response into native JavaScript objects
-      console.log(json)
+      // console.log(json)
       setUser(json)
     }
   
