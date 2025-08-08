@@ -1,70 +1,184 @@
-# Getting Started with Create React App
+# SkyNotes ☁️📝
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, cloud-based personal notebook application built with the MERN stack. SkyNotes provides a seamless note-taking experience with secure user authentication and real-time synchronization.
 
-## Available Scripts
+## ✨ Features
 
-In the project directory, you can run:
+- **Secure Authentication**: JWT-based user authentication and authorization
+- **CRUD Operations**: Create, read, update, and delete notes effortlessly
+- **Cloud Storage**: Notes are securely stored in MongoDB cloud database
+- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+- **Real-time Updates**: Instant synchronization across all devices
+- **User-friendly Interface**: Clean and intuitive React-based UI
 
-### `npm start`
+## 🛠️ Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Frontend:**
+- React.js
+- HTML5 & CSS3
+- JavaScript (ES6+)
+- Responsive Web Design
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Backend:**
+- Node.js
+- Express.js
+- RESTful API architecture
 
-### `npm test`
+**Database:**
+- MongoDB
+- Mongoose ODM
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Authentication:**
+- JSON Web Tokens (JWT)
+- bcrypt for password hashing
 
-### `npm run build`
+## 🚀 Quick Start
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Node.js (v14 or higher)
+- MongoDB (local installation or MongoDB Atlas)
+- npm or yarn package manager
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation
 
-### `npm run eject`
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/zishpanchal/SkyNotes.git
+   cd SkyNotes
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. **Install backend dependencies**
+   ```bash
+   npm install
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. **Install frontend dependencies**
+   ```bash
+   cd client
+   npm install
+   cd ..
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. **Environment Setup**
+   
+   Create a `.env` file in the root directory:
+   ```env
+   MONGODB_URI=your_mongodb_connection_string
+   JWT_SECRET=your_jwt_secret_key
+   PORT=5000
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+5. **Start the application**
+   
+   **Development mode (both frontend and backend):**
+   ```bash
+   npm run dev
+   ```
+   
+   **Backend only:**
+   ```bash
+   npm start
+   ```
+   
+   **Frontend only:**
+   ```bash
+   cd client
+   npm start
+   ```
 
-## Learn More
+6. **Access the application**
+   - Frontend: http://localhost:3000
+   - Backend API: http://localhost:5000
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📁 Project Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+SkyNotes/
+├── client/                 # React frontend
+│   ├── public/
+│   ├── src/
+│   │   ├── components/     # React components
+│   │   ├── pages/          # Page components
+│   │   ├── utils/          # Utility functions
+│   │   └── App.js
+│   └── package.json
+├── models/                 # MongoDB models
+├── routes/                 # Express routes
+├── middleware/             # Custom middleware
+├── config/                 # Configuration files
+├── server.js              # Express server
+├── package.json
+└── README.md
+```
 
-### Code Splitting
+## 🔑 API Endpoints
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Authentication
+- `POST /api/auth/register` - User registration
+- `POST /api/auth/login` - User login
+- `GET /api/auth/user` - Get user profile
 
-### Analyzing the Bundle Size
+### Notes
+- `GET /api/notes` - Fetch all user notes
+- `POST /api/notes` - Create a new note
+- `PUT /api/notes/:id` - Update a note
+- `DELETE /api/notes/:id` - Delete a note
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🧪 Testing
 
-### Making a Progressive Web App
+```bash
+# Run frontend tests
+cd client
+npm test
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# Run backend tests
+npm test
+```
 
-### Advanced Configuration
+## 🚢 Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Frontend (Netlify/Vercel)
+```bash
+cd client
+npm run build
+```
 
-### Deployment
+### Backend (Heroku/Railway)
+1. Set environment variables in your hosting platform
+2. Deploy the root directory (excludes client folder)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Full Stack (Railway/Render)
+Configure build commands for both frontend and backend deployment.
 
-### `npm run build` fails to minify
+## 🤝 Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature-name`
+3. Commit changes: `git commit -m 'Add feature'`
+4. Push to branch: `git push origin feature-name`
+5. Submit a pull request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👨‍💻 Author
+
+**Zish Panchal**
+- GitHub: [@zishpanchal](https://github.com/zishpanchal)
+
+## 🙏 Acknowledgments
+
+- Built with Create React App
+- MongoDB for database solutions
+- Express.js framework
+- React community for excellent documentation
+
+## 📞 Support
+
+If you have any questions or need help getting started, please open an issue in the GitHub repository.
+
+---
+
+⭐ Star this repository if you found it helpful!
